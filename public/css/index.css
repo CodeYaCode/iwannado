@@ -1,0 +1,156 @@
+/*index.css*/
+
+html, body {
+	height: 100%;
+	font-size: 16px;
+	background: #ccc;
+	font-family:"Microsoft YaHei";
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.container {
+	margin: 0 auto;
+	width: 60rem;
+	height: 100%;
+	background: #eee;
+}
+
+.title {
+	width: 60rem;
+	height: 4rem;
+	font-size: 4rem;
+	text-align: center;
+}
+
+.content {
+	margin: 0 auto;
+	margin-top: 2rem;
+	width: 50rem;
+	height: 30rem;
+	background: #fff;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}
+
+.catalog {
+	width: 10rem;
+	height: 30rem;
+	background: #ccc;
+}
+
+.list-title {
+	margin: 0 auto;
+	width: 8rem;
+	height: 3rem;
+	color: #111;
+	font-size: 1.75rem;
+	line-height: 3rem;
+	border-bottom: 2px solid #111;
+}
+
+.list {
+	margin: 0 auto;
+	margin-top: .5rem;
+	width: 8rem;
+	height: 2rem;
+	font-size: 1.25rem;
+	line-height: 2rem;
+	text-align: center;
+	border-bottom: 2px solid #777;
+}
+
+.list:hover {
+	background: #666;
+	cursor: pointer;
+}
+
+.list-active {
+	background: #666;
+}
+
+.events {
+	width: 40rem;
+	height: 30rem;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	background: #123456;
+}
+
+.event {
+	margin: 0 auto;
+	margin-top: .5rem;
+	width: 35rem;
+	height: 2.25rem;
+}
+
+.event-title {
+	margin: 0 auto;
+	width: 35rem;
+	height: 3rem;
+	color: #eee;
+	font-size: 1.75rem;
+	line-height: 3rem;
+	border-bottom: 2px solid #eee;
+}
+
+.event-content {
+	padding-left: 1rem;
+	width: 29rem;
+	height: 2.25rem;
+	line-height: 2.25rem;
+	border-radius: 1rem;
+	background: #11ad79;
+}
+
+.operation {
+	margin: 0 auto;
+	margin-top: 1rem;
+	width: 5rem;
+	height: 2.25rem;
+}
+
+.btn-op {
+	margin-left: .25rem;
+	width: 2.25rem;
+	height: 2.25rem;
+	line-height: 2rem;
+	text-align: center;
+	border-radius: 2.25rem;
+}
+
+.btn-op:hover {
+	cursor: pointer;
+}
+
+.btn-green {
+	background: #11ad79;
+}
+
+.btn-pink {
+	background: #FF4D55;
+}
+
+/** animation when is under threat of being delete. */
+@-moz-keyframes freaking-out {  /* Firefox */ 
+	0%   {transform: rotate(5deg);}
+	50% {transform: rotate(-5deg);}
+	100%   {transform: rotate(5deg);}
+}
+
+@-webkit-keyframes freaking-out { /* Safari 和 Chrome */ 
+	0%   {transform: rotate(5deg);}
+	50% {transform: rotate(-5deg);}
+	100%   {transform: rotate(5deg);}
+}
+
+.to-be-del {
+    -moz-animation: freaking-out .5s infinite;	/* Firefox */
+    -webkit-animation: freaking-out .5s infinite;	/* Safari 和 Chrome */
+}
