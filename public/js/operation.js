@@ -25,9 +25,9 @@ var addListDB = function addListDB(data, newName) {
 }
 
 var addEventDB = function addEventDB(data, newName) {
-	var PREFIX = '<div class="event" data-id="' + data.ID + '"> <div class="event-content event-pink left">';
+	var PREFIX = '<div class="event" data-id="' + data.id + '"> <div class="event-content event-pink left">';
 	var SUFFIX = '</div>';
-	var STATUSFIX = '<div class="btn-op btn-green event-yes right">x</div>';
+	var STATUSFIX = '<div class="btn-op btn-green event-yes right">√</div>';
 	var event = PREFIX + newName + SUFFIX + STATUSFIX + SUFFIX;
 	$('.event-title').after(event);
 	$('.event-yes').off('click').on('click', eventOpClick);
