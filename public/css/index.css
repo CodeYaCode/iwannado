@@ -43,6 +43,7 @@ html, body {
 	width: 10rem;
 	height: 30rem;
 	background: #ccc;
+	overflow-y: scroll;
 }
 
 .list-title {
@@ -81,6 +82,7 @@ html, body {
 	border-top-right-radius: 1rem;
 	border-bottom-right-radius: 1rem;
 	background: #123456;
+	overflow-y: scroll;
 }
 
 .event {
@@ -106,7 +108,16 @@ html, body {
 	height: 2.25rem;
 	line-height: 2.25rem;
 	border-radius: 1rem;
+}
+
+.event-green {
 	background: #11ad79;
+}
+
+.event-pink {
+	font-size: 1.25rem;
+	color: #eee;
+	background: #FF4D55;
 }
 
 .operation {
@@ -150,7 +161,24 @@ html, body {
 	100%   {transform: rotate(5deg);}
 }
 
+/** animation when is under threat of being delete. */
+@-moz-keyframes freaking-out {  /* Firefox */ 
+	0%   {transform: rotate(1deg);}
+	50% {transform: rotate(-1deg);}
+	100%   {transform: rotate(1deg);}
+}
+
+@-webkit-keyframes freaking-out1 { /* Safari 和 Chrome */ 
+	0%   {transform: rotate(1deg);}
+	50% {transform: rotate(-1deg);}
+	100%   {transform: rotate(1deg);}
+}
+
 .to-be-del {
-    -moz-animation: freaking-out .5s infinite;	/* Firefox */
-    -webkit-animation: freaking-out .5s infinite;	/* Safari 和 Chrome */
+    -moz-animation: freaking-out1 .5s infinite;	/* Firefox */
+    -webkit-animation: freaking-out1 .5s infinite;	/* Safari 和 Chrome */
+}
+
+.to-be-del:hover {
+	cursor: pointer;
 }

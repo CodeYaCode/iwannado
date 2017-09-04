@@ -9,7 +9,9 @@ var query = function(sql, param, cb) {
         if (err) {
             console.log(err);
         }
-        cb(err, result, fields);
+        if (cb) {
+            cb(err, result, fields);
+        }
     });
     // pool.getConnection(function(err, conn) {
     //     if (err) {

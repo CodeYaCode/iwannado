@@ -1,8 +1,11 @@
 // listService.js
-var listDao = require('../dao/listDao')
+var listDao = require('../dao/listDao');
+var eventDao = require('../dao/eventDao');
 
 function listService() {
 	this.listDao = new listDao();
+
+	this.eventDao = new eventDao();
 	
 	// query list info by userId
 	this.query = function(userId, cb) {
@@ -21,8 +24,12 @@ function listService() {
 	}
 
 	// del list info by userId
-	this.del = function(params, cb) {
+	this.del = function(userId, listId, cb) {
+		var params = [];
+		params.push(userId);
+		params.push(listId);
 		this.listDao.del(params, cb);
+		this.eventDao.delAllList(params, undefined);
 	}
 }
 

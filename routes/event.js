@@ -26,21 +26,35 @@ router.post('/add', function(req, res, next) {
 	var listId = req.body.listId;
 	var name = req.body.name;
 	var service = new eventService();
-	service.add(userId, name, function(err, rows, undefined) {
-		// to do something
+	service.add(userId, listId, name, function(err, rows, undefined) {
 		if (rows) {
 			res.send({id: rows.insertId});	
 		}
 	});
 });
 
-router.post('/del/:id', function(req, res, next) {
-	console.log('del it [' + req.params + ']');
-	var id = req.params.id;
+router.post('/del', function(req, res, next) {
+	// 默认账号ID
 	var userId = 1;
+	var eventId = req.body.eventId;
 	var service = new eventService();
-	service.del(userId, id, function(err, rows, undefined) {
-		// to do something
+	service.del(userId, eventId, function(err, rows, undefined) {
+		if (rows) {
+			res.send({id: rows.insertId});	
+		}
+	});
+});
+
+router.post('/update', function(req, res, next) {
+	// 默认账号ID
+	var userId = 1;
+	var eventId = req.body.eventId;
+	var service = new eventService();
+	var status = req.body.status;
+	service.update(userId, eventId, status, function(err, rows, undefined) {
+		if (rows) {
+			res.send({id: rows.insertId});	
+		}
 	});
 });
 

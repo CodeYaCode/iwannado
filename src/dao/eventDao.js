@@ -15,6 +15,14 @@ function eventDao() {
 	this.del = function(params, cb) {
 		query(sql['del'], params, cb);
 	}
+	// del all list's event
+	this.delAllList = function(params, cb) {
+		query(sql['del_all_list'], params, cb);
+	}
+	// update event
+	this.update = function(params, cb) {
+		query(sql['update'], params, cb);
+	}
 }
 
 // eventDao = new eventDao();

@@ -17,8 +17,9 @@ SQL['EVENT'] = {
 	"query" : "SELECT * FROM EVENT WHERE USER_ID = ? AND LIST_ID = ?",
 	"add" : "INSERT INTO EVENT (USER_ID, LIST_ID, EVENT_NAME, CREATE_TIME) VALUES (?, ?, ?, ?)",
 	"del" : "DELETE FROM EVENT WHERE USER_ID = ? AND ID = ?",
+	"del_all_list" : "DELETE FROM EVENT WHERE USER_ID = ? AND LIST_ID = ?",
 	"del_logic" : "UPDATE EVENT SET IS_DELETE = ? WHERE EVENT = ?",
-	"update" : "UPDATE EVENT SET STATUS = ? WHERE ID = ?",
+	"update" : "UPDATE EVENT SET STATUS = ? WHERE USER_ID = ? AND ID = ?",
 }
 
 module.exports = SQL;

@@ -23,8 +23,20 @@ function eventService() {
 	}
 
 	// del event info by userId
-	this.del = function(params, cb) {
+	this.del = function(userId, eventId, cb) {
+		var params = [];
+		params.push(userId);
+		params.push(eventId);
 		this.eventDao.del(params, cb);
+	}
+
+	// update event status by userId
+	this.update = function(userId, eventId, status, cb) {
+		var params = [];
+		params.push(status);
+		params.push(userId);
+		params.push(eventId);
+		this.eventDao.update(params, cb);
 	}
 }
 
