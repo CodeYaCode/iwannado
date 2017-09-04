@@ -19,11 +19,19 @@ var del = '-';
 
 _btn_add.on('click', function() {
 	var me = $(this);
+	var list = $('.list-active');
+	var listId = list.attr('attr-id');
 	var type = me.attr('data-type');
 	if (type) {
 		var newName = prompt('New ' + type);
 		if (newName) {
-			$.post('/' + type + '/add/' + newName, function(data) {
+			$.post({
+					url : '/' + type + '/add',
+					data : {
+						name = newName,
+						listId = listId,
+					},
+				}, function(data) {
 				// add element
 				var id = data.id;
 				var PREFIX = '<div class="' + list + '" data-id="' + id + '">';
