@@ -64,6 +64,7 @@ var btnListClick = function btnListClick() {
 				listId : id,
 			},
 		}, function(data) {
+			$('.event-title').html(me.html());
 			$('.event').remove();
 			data.forEach(function(value) {
 				addEventNode(value);
