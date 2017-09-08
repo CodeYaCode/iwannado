@@ -1,0 +1,182 @@
+/* index.less */
+
+/* less variable */
+@color-green: #11ad79;
+@color-pink : #ff4d55;
+
+/* less html variable */
+.w-h(@width, @height) {
+	width: @width;
+	height: @height;
+}
+
+.auto-mid {
+	margin : 0 auto;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.radius(@radius) {
+	border-radius: @radius;
+}
+
+.radius(@radius0, @radius1, @radius2, @radius3) {
+	border-top-right-radius: @radius0;
+	border-bottom-right-radius: @radius1;
+	border-top-left-radius: @radius2;
+	border-bottom-left-radius: @radius3;
+}
+
+/* html */
+html, body {
+	height: 100%;
+	font-size: 16px;
+	background: #ccc;
+	font-family: "Microsoft YaHei";
+}
+
+.container {
+	.auto-mid;
+	width: 60rem;
+	height: 100%;
+	background: #eee;
+}
+
+.title {
+	font-size: 4rem;
+	text-align: center;
+}
+
+.content {
+	.auto-mid;
+	.w-h(50rem, 30rem);
+	.radius(1rem, 1rem, 0, 0);
+	margin-top: 2rem;
+}
+
+.catalog {
+	.w-h(10rem, 30rem);
+	.left;
+	background: #ccc;
+	overflow-y: scroll;
+}
+
+@list-title-height: 3rem;
+.list-title {
+	.auto-mid;
+	.w-h(8rem, @list-title-height);
+	color: #111;
+	font-size: 1.75rem;
+	line-height: @list-title-height;
+	border-bottom: 2px solid #111;
+}
+
+@list-height: 2rem;
+.list {
+	.auto-mid;
+	.w-h(8rem, @list-height);
+	margin-top: .5rem;
+	font-size: 1.25rem;
+	line-height: @list-height;
+	text-align: center;
+	border-bottom: 2px solid #777;
+	&:hover {background: #666; cursor: pointer;}
+}
+
+.list-active {
+	background: #666;
+}
+
+.events {
+	.w-h(40rem, 30rem);
+	.radius(1rem, 1rem, 0rem, 0rem);
+	.right;
+	background: #123456;
+	overflow-y: scroll;
+}
+
+.event {
+	.auto-mid;
+	.w-h(35rem, 2.25rem);
+	margin-top: .5rem;
+}
+
+@event-title-height: 3rem;
+.event-title {
+	.auto-mid;
+	.w-h(35rem, @event-title-height);
+	color: #eee;
+	font-size: 1.75rem;
+	line-height: @event-title-height;
+	border-bottom: 2px solid #eee;
+}
+
+@event-content-height : 2.25rem;
+.event-content {
+	.w-h(28rem, @event-content-height);
+	.radius(1rem);
+	padding-left: 1rem;
+	line-height: @event-content-height;
+}
+
+.event-green {
+	background: @color-green;
+}
+
+.event-pink {
+	background: @color-pink;
+	font-size: 1.25rem;
+	color: #eee;
+}
+
+.operation {
+	.auto-mid;
+	.w-h(5rem, 2.25rem);
+	margin-top: 1rem;
+}
+
+@btn-op-width: 2.25rem;
+.btn-op {
+	.w-h(@btn-op-width, @btn-op-width);
+	.radius(@btn-op-width);
+	.left;
+	margin-left: .25rem;
+	line-height: 2rem;
+	text-align: center;
+	&:hover {cursor: pointer;}
+}
+
+.btn-green {
+	background: @color-green;
+}
+
+.btn-pink {
+	background: @color-pink;
+}
+
+
+/** animation when is under threat of being delete. */
+@rotate : 5deg;
+@-moz-keyframes freaking-out {  /* Firefox */ 
+	0%   {transform: rotate(@rotate);}
+	50% {transform: rotate(-@rotate);}
+	100%   {transform: rotate(@rotate);}
+}
+
+@-webkit-keyframes freaking-out { /* Safari 和 Chrome */ 
+	0%   {transform: rotate(@rotate);}
+	50% {transform: rotate(-@rotate);}
+	100%   {transform: rotate(@rotate);}
+}
+
+.to-be-del {
+    -moz-animation: freaking-out1 .5s infinite;	/* Firefox */
+    -webkit-animation: freaking-out1 .5s infinite;	/* Safari 和 Chrome */
+    &:hover {cursor: pointer;}
+}

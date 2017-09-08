@@ -1,6 +1,6 @@
 // app.js
 var express        = require('express');
-var bodyParser     =         require("body-parser");    
+var bodyParser     = require("body-parser");    
 var app            = express();
 var path           = require('path');
 var session        = require('express-session');
