@@ -136,8 +136,10 @@ html, body {
 	border-radius: 2.25rem;
 }
 
-.btn-op:hover {
-	cursor: pointer;
+.btn-children {
+	margin: 0;
+	padding: 0;
+	display: none;
 }
 
 .btn-green {
@@ -146,6 +148,10 @@ html, body {
 
 .btn-pink {
 	background: #FF4D55;
+}
+
+.btn-yellow {
+	background: #FF9900;
 }
 
 /** animation when is under threat of being delete. */

@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 		// console.log(req.session);
 		// 默认账号ID
 		res.render('index')
+		// res.render('test.ejs')
 	// }
 });
 

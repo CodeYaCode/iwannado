@@ -49,11 +49,12 @@ router.post('/update', function(req, res, next) {
 	// 默认账号ID
 	var userId = 1;
 	var eventId = req.body.eventId;
-	var service = new eventService();
+	var eventName = req.body.eventName;
 	var status = req.body.status;
-	service.update(userId, eventId, status, function(err, rows, undefined) {
+	var service = new eventService();
+	service.update(userId, eventId, eventName, status, function(err, rows, undefined) {
 		if (rows) {
-			res.send({id: rows.insertId});	
+			res.send({id: rows.insertId, eventName: eventName});
 		}
 	});
 });

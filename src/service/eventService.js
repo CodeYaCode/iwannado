@@ -31,8 +31,9 @@ function eventService() {
 	}
 
 	// update event status by userId
-	this.update = function(userId, eventId, status, cb) {
+	this.update = function(userId, eventId, eventName, status, cb) {
 		var params = [];
+		params.push(eventName);
 		params.push(status);
 		params.push(userId);
 		params.push(eventId);
