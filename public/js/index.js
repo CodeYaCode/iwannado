@@ -42,19 +42,20 @@ var eventOpEditClick = function eventOpEditClick() {
 	var me = $(this);
 	var sibling = me.siblings('.event-content');
 	var eventId = me.parent().attr('data-id');
+	var eventName = sibling.html();
 	var status = 0;
 	if (sibling.hasClass('event-green')) {
 		status = 1;
 	}
-	var eventName = prompt('New content: ');
-	if (eventName) {
+	var newEventName = prompt('New content: ', eventName);
+	if (newEventName) {
 		$.post(
 			{
 				url : 'event/update',
 				data : {
 					eventId : eventId,
 					status : status,
-					eventName : eventName,
+					eventName : newEventName,
 				},
 			}, function(data) {
 				updateEvent(me, sibling, data);
